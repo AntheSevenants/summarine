@@ -181,8 +181,8 @@ exports.config = {
     linuxExecutableName: product.applicationName,
     winIcon: 'resources/win32/code.ico',
     token: process.env['GITHUB_TOKEN'],
-    repo: product.electronRepository || undefined,
-    validateChecksum: true,
+    repo: 'electron/electron',
+    validateChecksum: false,
     checksumFile: path.join(root, 'build', 'checksums', 'electron.txt'),
 };
 function getElectron(arch) {
