@@ -416,7 +416,8 @@ export function generateTokensCSSForColorMap(colorMap: readonly Color[]): string
 		rules[i] = `.mtk${i} { color: ${color}; }`;
 	}
 
-	for (let i = 1, len = colorMap.length; i < len; i++) {
+	// Start the color map at 3. Why? Else, all background tokens will be coloured (you don't want this)
+	for (let i = 3, len = colorMap.length; i < len; i++) {
 		const color = colorMap[i];
 		rules.push(`.mtkbg${i} { background: ${color}; }`);
 	}
